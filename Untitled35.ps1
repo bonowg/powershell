@@ -1,0 +1,3 @@
+﻿Get-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Where { $_.DisplayName -ne $null } | FT
+Get-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Where { $_.DisplayName -ne $null } | Select-Object -Property DisplayName, Publisher, DisplayVersion, InstallDate
+Get-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Where { $_.DisplayName -ne $null } | Select-Object -Property DisplayName, Publisher, DisplayVersion, InstallDate | Sort-Object -Property DisplayName
